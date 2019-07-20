@@ -1,3 +1,35 @@
+
+function displayanimalInfo() {
+
+    //var city = $(this).attr("data-animal");
+    var queryURL =
+        "https://developer.nrel.gov/api/alt-fuel-stations/v1/nearest.json?api_key=Kb4RvBmaZ97LxOtipmzdPpj1OZcnJGTRrlu3EOY5&location=Denver+CO"
+
+
+    $.ajax({
+        url: queryURL,
+        method: "POST"
+    }).then(function (response) {
+
+        var results = response.Operations;
+
+        console.log(results);
+
+    });
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 var map;
 var infoWindow;
 
