@@ -1,0 +1,52 @@
+html {
+    background-color: lightgray;
+}
+
+body {
+    background-color: lightgray;
+}
+
+h1 {
+    background-color: lightgray;
+    color: green;
+    text-shadow: 2px 2px whitesmoke;
+    text-align: center;
+
+}
+
+table {
+
+    margin: 0 auto;
+}
+
+p {
+    text-shadow: 1px 1px whitesmoke;
+    font: bold 20px Black;
+    text-align: center;
+}
+
+input[type=text]:focus {
+    border: 2px solid;
+    outline: none;
+}
+
+.city {
+    border: none;
+
+}
+
+#state {}
+
+button {
+    border: none;
+    outline: none;
+}
+
+#map {
+    padding: 10px 0px;
+    margin: 10px auto;
+    height: 300px;
+    /* The height is 400 pixels */
+    width: 90%;
+    /* The width is the width of the web page */
+}
