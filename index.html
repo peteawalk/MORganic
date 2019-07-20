@@ -16,17 +16,16 @@
 <table>
     <tr>
         <td>
-            <p>City</p><input type="text" class="city">
-
-            <p>State</p><input type="text" class="state">
+            <p>City</p><input type="text" class="city" placeholder="anytown">
+            <br>
+            <p>State</p><input type="text" class="state" placeholder="MO">
             <!--<input class="type of food">-->
             <!--<input class="name of company">-->
-
             <button id="Submit">Submit</button>
         </td>
     </tr>
 </table>
-<div class="map">
+<div id="map">
     <!--for map-->
 </div>
 <div class="list">
@@ -39,10 +38,14 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
+    </script>
+    <script src="assets/javascript/function.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNFRmMZQVoEUwcaj4ivS2tEAbjkqW-8j0&callback=initMap">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
+    </script>
 </body>
 
 </html>
