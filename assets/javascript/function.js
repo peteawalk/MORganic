@@ -7,8 +7,9 @@ function initMap() {
             lat: 38.899, //KU Edwards Campus
             lng: -94.725
         },
-        zoom: 6
+        zoom: 11
     });
+
     infoWindow = new google.maps.InfoWindow;
 
     // Try HTML5 geolocation.
@@ -31,3 +32,8 @@ function initMap() {
         handleLocationError(false, infoWindow, map.getCenter());
     }
 }
+
+
+$("#kcMarkets").on("click", function () {
+    $(".list").append(window.open("https://www.google.com/maps/search/farmers+market+kansas+city/@39.0824499,-94.6327636,11z"));
+})
