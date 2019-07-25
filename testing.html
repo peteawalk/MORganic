@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>testing.html</title>
+</head>
+
+<body>
+    <h1>Open console</h1>
+    <button id="submit">submit</button>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        //Vars
+        farmersMarketID = [];
+        var marketURL = "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=64063";
+
+        $(document).ready(function () {
+
+            $("#submit").on("click", function () {
+
+                $.ajax({
+                    url: marketURL,
+                    type: "GET" //or POST to send data 
+                    //data: data, // if the type is POST
+                }).then(function (response) {
+                    // for (var a = 0; a < response.length; a++) {
+                    console.log(response);
+                    // }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

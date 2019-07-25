@@ -1,39 +1,42 @@
-var map;
-var infoWindow;
+// Need to set address to the returned address from the Farmer's Market API
+var marketLocations = ["113 SE Douglas Street, Lee's Summit, Missouri, 64063", "11th St & Main St, Blue Springs, Missouri, 64015", "6210 Raytown Road, Raytown , Missouri, 64133"];
 
 function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
         center: {
-            lat: 38.899, //KU Edwards Campus
+            lat: 38.899,
             lng: -94.725
-        },
-        zoom: 11
+        }
     });
+    var geocoder = new google.maps.Geocoder();
 
-    infoWindow = new google.maps.InfoWindow;
-
-    // Try HTML5 geolocation.
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            var pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
-
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            infoWindow.open(map);
-            map.setCenter(pos);
-        }, function () {
-            handleLocationError(true, infoWindow, map.getCenter());
-        });
-    } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
-    }
+    document.getElementById('submit').addEventListener('click', function () {
+        geocodeAddress(geocoder, map);
+    });
 }
 
+function geocodeAddress(geocoder, resultsMap) {
+    let city = document.getElementById('city').value.trim();
+    let state = document.getElementById('state').value.trim();
+    let zipCode = document.getElementById('address').value;
+    for (j = 0; j < marketLocations.length; j++) {
+        address = marketLocations[j];
+        console.log(address);
 
-$("#kcMarkets").on("click", function () {
-    $(".list").append(window.open("https://www.google.com/maps/search/farmers+market+kansas+city/@39.0824499,-94.6327636,11z"));
-})
+        // var address = document.getElementById('address').value; // Set this to address from API.
+        geocoder.geocode({
+            'address': address
+        }, function (results, status) {
+            if (status === 'OK') {
+                resultsMap.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: resultsMap,
+                    position: results[0].geometry.location
+                });
+            } else {
+                console.log('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+}
