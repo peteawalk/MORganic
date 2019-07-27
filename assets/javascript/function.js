@@ -29,7 +29,7 @@ function getDetails(id) {
             type: "GET",
             contentType: "application/json; charset=utf-8",
             // submit a get request to the restful service mktDetail.
-            url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + id,
+            url: "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + id,
             dataType: 'jsonp'
         }).then(function (secondResponse) {
             var marketDetails = secondResponse.marketdetails
