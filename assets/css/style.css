@@ -1,40 +1,54 @@
 html {
-    background-color: honeydew;
+    background-color: honeydew
+  
 }
 
 body {
     background-image: url('../images/background-2.jpg');
+    margin: 3px;
+  
+    background-color: lightgrey;
+    
+  
+  /* Center and scale the image nicely */
+ 
 }
 
 #header{
     background-color: honeydew;
     margin-bottom: 20px;
     height: 70px;
+    width: 100%;
 }
 
 /* Dropdown Button */
 .dropbtn {
-    
+    text-shadow: black 1px 1px;
+    font-family: Garamond Georgia, 'Times New Roman', Times, serif;
     border-radius: 6px;
     background-color: green;
     color: whitesmoke;
     padding: 16px;
     font-size: 16px;
     border: none;
+    outline: none:
    
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-    position: relative;
-    display: inline-block;
+    font-family: Garamond Georgia, 'Times New Roman', Times, serif;
+    text-shadow: black 1px 1px;
+    float: left;
+    margin-top: 6px;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     border-radius: 6px;
     display: none;
-    
+    font-weight: bold;
+    font-family: Garamond Georgia, 'Times New Roman', Times, serif;
     position: absolute;
     background-color: green;
     min-width: 160px;
@@ -54,6 +68,7 @@ body {
 .dropdown-content a:hover {
     background-color: #3e8e41;
     cursor: pointer;
+    border-radius: 8px;
 }
 
 /* Show the dropdown menu on hover */
@@ -67,9 +82,9 @@ body {
 }
 
 #logo {
-   background-color: honeydew;
+    background-color: honeydew;
     color: green;
-    text-shadow: 2px 2px whitesmoke;
+    text-shadow: 1px 1px black;
     text-align: center;
     display: inline-block;
     margin: 0 auto;
@@ -83,11 +98,17 @@ table {
 }
 
 p {
+    font-weight: bold;
+    font-family: Garamond Georgia, 'Times New Roman', Times, serif;
     color: whitesmoke;
     background-color: green;
     border-radius: 6px;
-    font: 18px whitesmoke;
+    font: 18px;
     text-align: center;
+    text-shadow: black 1px 1px;
+    box-shadow: darkgreen 1px 1px;
+   
+    
 }
 
 input[type=text]:focus {
@@ -95,14 +116,21 @@ input[type=text]:focus {
     outline: none;
 }
 
-.address {
+#address {
     border: none;
+    outline: none;
+    border-radius: 8px;
+    box-shadow:grey 0px 2px 2px;
+    font-family: Garamond Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
 
 }
 
 
 
 button {
+    font-weight: bold;
+    font-family: Garamond Georgia, 'Times New Roman', Times, serif;
     border: none;
     outline: none;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.192);
@@ -110,14 +138,68 @@ button {
     margin-left: 5px;
 }
 
+
+#box {
+    background-color: whitesmoke;
+    opacity: 0.6;
+ 
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    border-radius: 6px;
+}
+
+#marketDetails{
+
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 10%;
+    font-weight: bold;
+    font-family: Garamond Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.4),
+             0px 2px 3px rgba(0,0,0,0.1),
+             0px 5px 6px rgba(0,0,0,0.1);
+
+ 
+
+
+
+}
+
+#submit {
+    outline: none;
+    border: none;
+    color: black;
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                     0px -5px 35px rgba(255,255,255,0.3);
+    box-shadow: gray 0px 2px 2px;
+
+
+}
+#viewmap{
+    outline: none;
+    border: none;
+    color: black;
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                     0px -5px 35px rgba(255,255,255,0.3);
+    box-shadow: gray 0px 2px 2px;
+}
+
 #submit:active {
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transform: translateY(4px);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    transform: translateY(2px);
     outline: none;
     border: none;
     
 }
-
+#viewmap:active {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    transform: translateY(2px);
+    outline: none;
+    border: none;
+}
 #map {
     padding: 10px 0px;
     margin: 10px auto;
@@ -125,6 +207,7 @@ button {
     /* The height is 400 pixels */
     width: 90%;
     /* The width is the width of the web page */
+    border-radius: 6px;
 }
 .btn-primary{
     left: 45%;
@@ -135,6 +218,8 @@ button {
 }
 
 #footer{
+    font-weight: bold;
+    font-family: Garamond Georgia, 'Times New Roman', Times, serif;
     margin-top: 50px;
     height: 10px;
     color: green;
