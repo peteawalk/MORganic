@@ -17,7 +17,6 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="assets/javascript/market.js"></script>
 
     <div id="header">
         <div class="dropdown">
@@ -41,23 +40,25 @@
                 <!--<input class="type of food">-->
                 <!--<input class="name of company">-->
                 <button id="submit">Submit</button>
+                <button id="viewmap">View on Map</button>
             </td>
         </tr>
     </table>
 
-    <div id="marketDetails"></div>
+    <div id="map"></div> <!-- Map here -->
 
-    <div id="map"></div>
+    <div id="marketDetails"></div> <!-- Farmer's Market Details Return here-->
 
     <footer id="footer">
         &copy;
     </footer>
 
-
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALDldcIq9epVb6htkWy_A1s9YYF9ETTMY&callback=initMap">
-    </script>
     <script src="assets/javascript/function.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALDldcIq9epVb6htkWy_A1s9YYF9ETTMY&callback=geocodeAddress">
+    </script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALDldcIq9epVb6htkWy_A1s9YYF9ETTMY&callback=initMap">
+    </script> -->
 </body>
 
 </html>

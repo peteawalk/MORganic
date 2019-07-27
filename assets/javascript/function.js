@@ -1,11 +1,10 @@
 //Vars
 var marketLocations = [];
 var farmersMarketIdArray = [];
+var map;
 
-function initialApiCall() {
+$("#submit").on("click", function () {
     var zipCode = $('#address').val();
-    console.log(zipCode);
-
     var marketURL = "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zipCode;
 
     $.ajax({
@@ -21,7 +20,7 @@ function initialApiCall() {
         console.log(`farmersMarketIdArray is: ${farmersMarketIdArray}`);
         getDetails();
     });
-};
+});
 
 function getDetails(id) {
     for (n = 0; n < farmersMarketIdArray.length; n++) {
@@ -43,47 +42,38 @@ function getDetails(id) {
             $("#marketDetails").append(`Products: ${marketProducts} <br>`);
             $("#marketDetails").append(`Schedule: ${marketSchedule} <br>`);
         })
+        initMap(); // map displayed
     }
-
 }
 
-// // Need to set address to the returned address from the Farmer's Market API
-// var marketLocations = ["11th St & Main St, Blue Springs, Missouri, 64015", "113 SE Douglas Street, Lee's Summit, Missouri, 64063", "8th and Goode Streets, Grandview, Missouri, 64030"];
 function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
         center: {
             lat: 38.899,
             lng: -94.725
         }
     });
-
-    var geocoder = new google.maps.Geocoder();
-    document.getElementById('submit').addEventListener('click', function () {
-        initialApiCall();
-        geocodeAddress(geocoder, map);
-    });
-
 }
 
+$(document).on('click', '#viewmap', function () {
+    var geocoder = new google.maps.Geocoder();
+    geocodeAddress(geocoder, map);
+});
 
-function geocodeAddress(geocoder, resultsMap) {
-    // let city = document.getElementById('city').value.trim();
-    // let state = document.getElementById('state').value.trim();
+function geocodeAddress(geocoder, map) {
     let zipCode = document.getElementById('address').value;
     for (j = 0; j < marketLocations.length; j++) {
         let address = marketLocations[j];
-        console.log(`geocoder address: ${address}`);
 
-        // var address = document.getElementById('address').value; // Set this to address from API.
         geocoder.geocode({
             'address': address
         }, function (results, status) {
             if (status === 'OK') {
                 console.log(status);
-                resultsMap.setCenter(results[0].geometry.location);
+                map.setCenter(results[0].geometry.location);
                 var marker = new google.maps.Marker({
-                    map: resultsMap,
+                    map: map,
                     position: results[0].geometry.location
                 });
             } else {
