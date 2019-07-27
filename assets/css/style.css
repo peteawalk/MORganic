@@ -141,3 +141,9 @@ button {
     text-align: center;
     background-color: honeydew;
 }
+
+#marketDetails{
+    margin-top: -250px;
+    background-color: green;
+    color: whitesmoke;
+}
