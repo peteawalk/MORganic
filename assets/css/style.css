@@ -83,8 +83,10 @@ table {
 }
 
 p {
-    text-shadow: 1px 1px whitesmoke;
-    font: bold 20px green;
+    color: whitesmoke;
+    background-color: green;
+    border-radius: 6px;
+    font: 18px whitesmoke;
     text-align: center;
 }
 
@@ -93,14 +95,12 @@ input[type=text]:focus {
     outline: none;
 }
 
-.city {
+.address {
     border: none;
 
 }
 
-.state {
-    border: none;
-}
+
 
 button {
     border: none;
@@ -115,6 +115,7 @@ button {
     transform: translateY(4px);
     outline: none;
     border: none;
+    
 }
 
 #map {
