@@ -40,10 +40,7 @@
     <table>
         <tr>
             <td>
-                <p>City</p><input type="text" id="city" placeholder="anytown">
-                <br>
-                <p>State</p><input type="text" id="state" placeholder="MO">
-                <br>
+
                 <p>Address</p><input type="text" id="address" class="marketzip" placeholder="Kansas City, 64111">
                 <!--<input class="type of food">-->
                 <!--<input class="name of company">-->
@@ -52,32 +49,20 @@
             </td>
         </tr>
     </table>
-
+    <div id="marketDetails"></div> <!-- Farmer's Market Details Return here-->
     <div id="map"></div> <!-- Map here -->
 
-    <div class="container-fluid">
-        <table>
-            <tr>
-                <td>
-                    <p>Address</p><input type="text" class="address" placeholder="">
-                    <br>
-                    <!--p>State</p><input type="text" class="state" placeholder="MO"-->
-                    <!--<input class="type of food">-->
-                    <!--<input class="name of company">-->
-                    <button id="Submit">Submit</button>
-                </td>
-            </tr>
-        </table>
-        <div id="map">
-            <!--for map-->
-        </div>
-          <div id="marketDetails"></div> <!-- Farmer's Market Details Return here-->
-      
-        <div class="list">
-            <button id="kcMarkets" class="btn-primary"><a href="
+
+    <div id="map">
+        <!--for map-->
+    </div>
+
+
+    <div class="list">
+        <button id="kcMarkets" class="btn-primary"><a href="
                 https://www.google.com/maps/search/farmers+market+kansas+city/@39.0824499,-94.6327636,11z"></a>Local
-                Farmer's Markets</button>
-        </div>
+            Farmer's Markets</button>
+    </div>
     </div>
     </div>
 
@@ -88,7 +73,7 @@
     <script src="assets/javascript/function.js"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALDldcIq9epVb6htkWy_A1s9YYF9ETTMY&callback=geocodeAddress">
-    </script>
+        </script>
 </body>
 
 </html>
