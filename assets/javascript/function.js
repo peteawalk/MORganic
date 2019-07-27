@@ -4,6 +4,9 @@ var farmersMarketIdArray = [];
 var map;
 
 $("#submit").on("click", function () {
+    farmersMarketIdArray = [];
+    $("#marketDetails").empty();
+
     var zipCode = $('#address').val();
     var marketURL = "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zipCode;
 
@@ -20,7 +23,12 @@ $("#submit").on("click", function () {
         console.log(`farmersMarketIdArray is: ${farmersMarketIdArray}`);
         getDetails();
     });
+
+
 });
+
+
+
 
 function getDetails(id) {
     for (n = 0; n < farmersMarketIdArray.length; n++) {
@@ -38,13 +46,18 @@ function getDetails(id) {
             var marketSchedule = marketDetails.Schedule
             marketLocations.push(marketAddress);
             console.log(`marketLocations array: ${marketLocations}`);
-            $("#marketDetails").append(`Address: ${marketAddress} <br>`);
-            $("#marketDetails").append(`Products: ${marketProducts} <br>`);
-            $("#marketDetails").append(`Schedule: ${marketSchedule} <br>`);
+            $("#marketDetails").append(` Location: ${marketAddress} <br>`);
+            $("#marketDetails").append(` Items: ${marketProducts} <br>`);
+            $("#marketDetails").append(` Open: ${marketSchedule} <br>`);
         })
         initMap(); // map displayed
     }
+
+
+
+
 }
+
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -82,3 +95,4 @@ function geocodeAddress(geocoder, map) {
         });
     }
 }
+

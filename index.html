@@ -12,16 +12,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
-<body>
-
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-    <!-- div class="container-fluid"-->
-
-    <!--div class="col-sm-12 col-md-8 col-lg-6"-->
+<header>
     <div id="header">
 
         <h1 id="logo">MORganic</h1>
@@ -33,15 +24,25 @@
             </div>
         </div>
     </div>
-    </div>
+</header>
 
-    </div>
+<body>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- div class="container-fluid"-->
+
+    <!--div class="col-sm-12 col-md-8 col-lg-6"-->
+
+
 
     <table>
         <tr>
             <td>
+                <p>Zip Code</p><input type="number" id="address" class="marketzip" placeholder="11111">
 
-                <p>Address</p><input type="numbers" id="address" class="marketzip" placeholder="Kansas City, 64111">
                 <!--<input class="type of food">-->
                 <!--<input class="name of company">-->
                 <button id="submit">Submit</button>
@@ -49,22 +50,20 @@
             </td>
         </tr>
     </table>
-    <div id="marketDetails"></div> <!-- Farmer's Market Details Return here-->
+
+    <div id="box">
+        <div id="marketDetails"></div> <!-- Farmer's Market Details Return here-->
+    </div>
+
     <div id="map"></div> <!-- Map here -->
 
 
-    <div id="map">
-        <!--for map-->
-    </div>
-
-
     <div class="list">
-        <button id="kcMarkets" class="btn-primary"><a href="
+        <!--button id="kcMarkets" class="btn-primary"><a href="
                 https://www.google.com/maps/search/farmers+market+kansas+city/@39.0824499,-94.6327636,11z"></a>Local
-            Farmer's Markets</button>
+                Farmer's Markets</button-->
     </div>
-    </div>
-    </div>
+  </div>
 
     <footer id="footer">
         &copy; MORganic
