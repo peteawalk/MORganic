@@ -6,6 +6,7 @@ var map;
 $("#submit").on("click", function () {
     farmersMarketIdArray = [];
     $("#marketDetails").empty();
+    marketLocations = [];
 
     var zipCode = $('#address').val();
     var marketURL = "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zipCode;
